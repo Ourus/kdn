@@ -994,16 +994,9 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
         // TODO add your handling code here:
         // aluno
         alunoN.setNome(tfNomeAluno.getText());
-        alunoN.setMatricula("457524751");
-        alunoN.setStatus("ativo");
-        
         
         // endereco 
         enderecoN.setBairro(tfBairro.getText());
-        enderecoN.setCep("45655455");
-        enderecoN.setCidade("Vitoria");
-        enderecoN.setUf("ES");
-        
         
         // contato 
         

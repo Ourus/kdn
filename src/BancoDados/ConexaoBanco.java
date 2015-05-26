@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 public class ConexaoBanco 
 {
     String driver = "com.mysql.jdbc.Driver"; // Driver para conexão Java/MySQL
-    public String caminho = "jdbc:mysql://localhost:3306/escola3"; // Caminho para o banco de dados
+    public String caminho = "jdbc:mysql://localhost:3306/ceet"; // Caminho para o banco de dados
     public String usuario = "root"; // Usuário
     public String senha = "root"; 
   
