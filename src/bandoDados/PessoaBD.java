@@ -28,10 +28,11 @@ public class PessoaBD extends Conexao {
         } finally {
             desconectarBanco();
             return i;
+
         }
     }
 
-     // =======================================================================
+    // =======================================================================
     public int cadastro(Pessoa pessoa, Endereco endereco, ArrayList<Contato> contato) {
         int i = 0;
         try {
@@ -107,8 +108,7 @@ public class PessoaBD extends Conexao {
 
     }
 
-    private void cadastroEndereco(int pessoa, ArrayList<Endereco> ende) 
-    {
+    private void cadastroEndereco(int pessoa, ArrayList<Endereco> ende) {
 
         try {
             conectarBanco();
@@ -148,7 +148,7 @@ public class PessoaBD extends Conexao {
 
     private void cadastroContato(int pessoa, ArrayList<Contato> cont) {
         try {
-            for (Contato contato :cont) {
+            for (Contato contato : cont) {
                 conectarBanco();
 
                 stm = con.createStatement();
@@ -175,7 +175,7 @@ public class PessoaBD extends Conexao {
             PreparedStatement stm = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, pessoa.getNome());
             stm.setString(2, pessoa.getRG());
-            stm.setString(3, pessoa.getDataExpedicao().get(Calendar.YEAR)+"-"+ pessoa.getDataExpedicao().get(Calendar.MONTH)+ "-"+ pessoa.getDataExpedicao().get(Calendar.DAY_OF_MONTH));
+            stm.setString(3, pessoa.getDataExpedicao().get(Calendar.YEAR) + "-" + pessoa.getDataExpedicao().get(Calendar.MONTH) + "-" + pessoa.getDataExpedicao().get(Calendar.DAY_OF_MONTH));
             stm.setString(4, pessoa.getOrgaoEmissor());
             stm.setString(5, pessoa.getCpf());
             stm.setString(6, pessoa.getNaturalidade());
@@ -187,13 +187,12 @@ public class PessoaBD extends Conexao {
             stm.setBlob(11, pessoa.getFoto());
             stm.setString(12, pessoa.getSexo());
             stm.setString(13, pessoa.getCorRaca());
-            
-            
+
             stm.executeUpdate();
 
             ResultSet codPessoa = stm.getGeneratedKeys();
             while (codPessoa.next()) {
-                key = codPessoa.getInt(1);
+                key = codPessoa.getInt("codPessoa");
             }
 
         } catch (Exception e) {

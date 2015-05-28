@@ -16,10 +16,11 @@ public class AlunoBD extends PessoaBD
     public void cadastro(Aluno aluno,Endereco endereco, Contato contato)
     {      
         int key=0;
+        
         try 
         {
            key = super.cadastro(aluno, endereco, contato);
-          
+            System.out.println(key);
             conectarBanco();
             stm = con.createStatement();
             
