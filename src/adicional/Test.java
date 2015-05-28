@@ -19,7 +19,6 @@ public class Test
     
     alunoN.setCertidaoNascimento("true");
     alunoN.setComprovanteEscolarida("true");
-    alunoN.setContato(null);
     alunoN.setCorRaca("Preta");
     alunoN.setCpf("111.111.111-88");
    

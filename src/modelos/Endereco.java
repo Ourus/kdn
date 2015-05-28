@@ -3,7 +3,7 @@ package modelos;
 
 public class Endereco 
 {
-    private String endereco;
+    private String rua;
     private String cidade;
     private String uf;
     private String bairro;
@@ -52,12 +52,12 @@ public class Endereco
         this.complemento = complemento;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getRua() {
+        return rua;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
     public int getCodPessoa() {

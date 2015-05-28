@@ -27,6 +27,7 @@ public class Arquivos
     }
     
     
+    
     public String lerTextoArquivo()
     {
         String linha = "", texto = "";

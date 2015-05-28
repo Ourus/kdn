@@ -28,12 +28,46 @@ public class PessoaBD extends Conexao {
         } finally {
             desconectarBanco();
             return i;
-
         }
     }
 
-    // =======================================================================
+     // ===================================================================================
+    
     public int cadastro(Pessoa pessoa, Endereco endereco, ArrayList<Contato> contato) {
+        int i = 0;
+        try {
+            i = cadastroPessoaKey(pessoa);
+            cadastroEndereco(i, endereco);
+            cadastroContato(i, contato);
+            JOptionPane.showMessageDialog(null, "Cadastro Realizado \n \t com sucesso !!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            desconectarBanco();
+            return i;
+        }
+    }
+    
+    
+    public int cadastro(Pessoa pessoa, ArrayList <Endereco> endereco, Contato contato) {
+        int i = 0;
+        try {
+            i = cadastroPessoaKey(pessoa);
+            cadastroEndereco(i, endereco);
+            cadastroContato(i, contato);
+            JOptionPane.showMessageDialog(null, "Cadastro Realizado \n \t com sucesso !!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            desconectarBanco();
+            return i;
+        }
+    }
+    
+    
+    public int cadastro(Pessoa pessoa, ArrayList <Endereco> endereco, ArrayList <Contato> contato) {
         int i = 0;
         try {
             i = cadastroPessoaKey(pessoa);
@@ -50,6 +84,11 @@ public class PessoaBD extends Conexao {
     }
 
 // Excluir Pessoa
+    
+    
+    
+    
+    
     public void excluirPessoa(Pessoa pessoa) {
         try {
             conectarBanco();
@@ -94,8 +133,8 @@ public class PessoaBD extends Conexao {
         try {
             conectarBanco();
             stm = con.createStatement();
-            String sql = "insert into endereco (codPessoa,endereco,cidade,uf,bairro,cep,complemento)"
-                    + "values(" + pessoa + ",'" + endereco.getEndereco() + "','" + endereco.getCidade() + "'"
+            String sql = "insert into endereco (codPessoa,rua,cidade,uf,bairro,cep,complemento)"
+                    + "values(" + pessoa + ",'" + endereco.getRua() + "','" + endereco.getCidade() + "'"
                     + ",'" + endereco.getUf() + "','" + endereco.getBairro() + "','" + endereco.getCep() + "',"
                     + "'" + endereco.getComplemento() + "');";
             stm.executeUpdate(sql);
@@ -108,14 +147,15 @@ public class PessoaBD extends Conexao {
 
     }
 
-    private void cadastroEndereco(int pessoa, ArrayList<Endereco> ende) {
+    private void cadastroEndereco(int pessoa, ArrayList<Endereco> ende) 
+    {
 
         try {
             conectarBanco();
             for (Endereco endereco : ende) {
                 stm = con.createStatement();
                 String sql = "insert into endereco (codPessoa,endereco,cidade,uf,bairro,cep,complemento)"
-                        + "values(" + pessoa + ",'" + endereco.getEndereco() + "','" + endereco.getCidade() + "'"
+                        + "values(" + pessoa + ",'" + endereco.getRua() + "','" + endereco.getCidade() + "'"
                         + ",'" + endereco.getUf() + "','" + endereco.getBairro() + "','" + endereco.getCep() + "',"
                         + "'" + endereco.getComplemento() + "');";
                 stm.executeUpdate(sql);
@@ -148,7 +188,7 @@ public class PessoaBD extends Conexao {
 
     private void cadastroContato(int pessoa, ArrayList<Contato> cont) {
         try {
-            for (Contato contato : cont) {
+            for (Contato contato :cont) {
                 conectarBanco();
 
                 stm = con.createStatement();
@@ -175,7 +215,7 @@ public class PessoaBD extends Conexao {
             PreparedStatement stm = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stm.setString(1, pessoa.getNome());
             stm.setString(2, pessoa.getRG());
-            stm.setString(3, pessoa.getDataExpedicao().get(Calendar.YEAR) + "-" + pessoa.getDataExpedicao().get(Calendar.MONTH) + "-" + pessoa.getDataExpedicao().get(Calendar.DAY_OF_MONTH));
+            stm.setString(3, pessoa.getDataExpedicao().get(Calendar.YEAR)+"-"+ pessoa.getDataExpedicao().get(Calendar.MONTH)+ "-"+ pessoa.getDataExpedicao().get(Calendar.DAY_OF_MONTH));
             stm.setString(4, pessoa.getOrgaoEmissor());
             stm.setString(5, pessoa.getCpf());
             stm.setString(6, pessoa.getNaturalidade());
@@ -187,12 +227,13 @@ public class PessoaBD extends Conexao {
             stm.setBlob(11, pessoa.getFoto());
             stm.setString(12, pessoa.getSexo());
             stm.setString(13, pessoa.getCorRaca());
-
+            
+            
             stm.executeUpdate();
 
             ResultSet codPessoa = stm.getGeneratedKeys();
             while (codPessoa.next()) {
-                key = codPessoa.getInt("codPessoa");
+                key = codPessoa.getInt(1);
             }
 
         } catch (Exception e) {
@@ -254,7 +295,7 @@ public class PessoaBD extends Conexao {
                 endereco.setComplemento(tabelaEnderecosPessoas.getString("complemento"));
                 endereco.setCep(tabelaEnderecosPessoas.getString("cep"));
                 endereco.setUf(tabelaEnderecosPessoas.getString("uf"));
-                endereco.setEndereco(tabelaEnderecosPessoas.getString("endereco"));
+                endereco.setRua(tabelaEnderecosPessoas.getString("endereco"));
                 endereco.setCodEndereco(tabelaEnderecosPessoas.getInt("codEndereco"));
 
                 listaEnderecoPessoa.add(endereco);
