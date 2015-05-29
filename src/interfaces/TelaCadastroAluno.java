@@ -3,10 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package interfaces;
-
-
 
 import interfacessWebCam.TelaCadExemploWEBCAM;
 import java.awt.Color;
@@ -24,123 +21,102 @@ import java.util.Calendar;
 import net.sf.nachocalendar.CalendarFactory;
 import net.sf.nachocalendar.components.DateField;
 
-
 public class TelaCadastroAluno extends javax.swing.JDialog {
-   
+
     Aluno alunoN = new Aluno();
     Endereco enderecoN = new Endereco();
     Contato contatoN = new Contato();
-     Contato contatoN2 = new Contato();
-      Contato contatoN3 = new Contato();
+    Contato contatoN2 = new Contato();
+    Contato contatoN3 = new Contato();
     AlunoBD alunob = new AlunoBD();
     DateField dataNascimento = CalendarFactory.createDateField();
     DateField dataExpedicao = CalendarFactory.createDateField();
-    
-           
 
-    String caminhoImagemAtualUsuario = ""; 
-    
+    String caminhoImagemAtualUsuario = "";
+
     public TelaCadastroAluno(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+
         // Criando Painel de Data 
-         Calendar cal = Calendar.getInstance();
+        Calendar cal = Calendar.getInstance();
         dataNascimento.setBaseDate(cal.getTime());
         pnDataNascimento.add(dataNascimento);
         // Definindo o botão DateField (Data Inicio do Semestre) para seleção de uma data e atribuindo uma ação de mudança à ele.
         dataNascimento.setSize((pnDataNascimento.getWidth()), (pnDataNascimento.getHeight()));
-        
-        
-       pnDataExpedicao.add(dataExpedicao);
-       dataExpedicao.setSize((pnDataNascimento.getWidth()), (pnDataNascimento.getHeight()));
-        
-        
-        
-        
-        
+
+        pnDataExpedicao.add(dataExpedicao);
+        dataExpedicao.setSize((pnDataNascimento.getWidth()), (pnDataNascimento.getHeight()));
+
         cbNao.setSelected(true);
         tfQuais.setEnabled(false);
         tfQuais.setVisible(false);
         lbQuais.setText("");
-    
-         cbxEstado.removeAllItems();
+
+        cbxEstado.removeAllItems();
         String linhaa = "", textos = "";
-        BufferedReader bfs= null;
-        try
-        {
+        BufferedReader bfs = null;
+        try {
             FileReader leitor = new FileReader("estadosBrasil.txt"); // Criando um leitor para o arquivo
             bfs = new BufferedReader(leitor);    // Armazenando o conteúdo obtido pelo leitor em um buffer
-            
-            while((linhaa = bfs.readLine())!= null) // Enquanto houverem linhas a serem lidas no buffer...
-                {
-                   cbxEstado.addItem(linhaa);
-                }
-        }catch(IOException e)
-        {
+
+            while ((linhaa = bfs.readLine()) != null) // Enquanto houverem linhas a serem lidas no buffer...
+            {
+                cbxEstado.addItem(linhaa);
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
-           
+
         //ADD CIDADES DO ES
-        
         cbxCidade.removeAllItems();
         String linhas = "", textoss = "";
-        BufferedReader bff= null;
-        try
-        {
+        BufferedReader bff = null;
+        try {
             FileReader leitor = new FileReader("cidadesES.txt"); // Criando um leitor para o arquivo
             bff = new BufferedReader(leitor);    // Armazenando o conteúdo obtido pelo leitor em um buffer
-            
-            while((linhas = bff.readLine())!= null) // Enquanto houverem linhas a serem lidas no buffer...
-                {
-                   cbxCidade.addItem(linhas);
-                }
-        }catch(IOException e)
-        {
+
+            while ((linhas = bff.readLine()) != null) // Enquanto houverem linhas a serem lidas no buffer...
+            {
+                cbxCidade.addItem(linhas);
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        
-            
-    
-       this.getContentPane().setBackground(new Color(59,135,199));
-        
+
+        this.getContentPane().setBackground(new Color(59, 135, 199));
+
         // removendo os itens primarios do comboBox 
         cbxTelaCadastroAlunoCurso.removeAllItems();
         cbxSexo.removeAllItems();
         cbxTurno.removeAllItems();
         cbxMod.removeAllItems();
-        
+
         cbxCorRaca.removeAllItems();
-       
-        
-        
-        
+
         // ADD itens ao TURNO de Cadastro de alunos
         cbxTurno.addItem("MATUTINO");
         cbxTurno.addItem("VESPERTINO");
         cbxTurno.addItem("NOTURNO");
-        
+
         // add itens de SEXO a tela de cadastro de alunos
         cbxSexo.addItem("F");
         cbxSexo.addItem("M");
-        
+
         //add itens de MODULO a tela de cadastro de alunos
         cbxMod.addItem("Mód. I");
         cbxMod.addItem("Mód. II");
         cbxMod.addItem("Mód. III");
         cbxMod.addItem("Mód. IV");
-        
+
         //add estados
-        
-        
         //add cor/raça
-        
         cbxCorRaca.addItem("Branca");
-        cbxCorRaca.addItem("Negra");
+        cbxCorRaca.addItem("Preta");
         cbxCorRaca.addItem("Parda");
         cbxCorRaca.addItem("Amarela");
         cbxCorRaca.addItem("Indígena");
-        
+
         // add itens de OPÇÃO DE CURSOS a tela de cadastro de alunos
         cbxTelaCadastroAlunoCurso.addItem("Téc. Informatica");
         cbxTelaCadastroAlunoCurso.addItem("Téc. Redes de Computadores");
@@ -153,8 +129,7 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
         cbxTelaCadastroAlunoCurso.addItem("Téc. Hospedagem");
         cbxTelaCadastroAlunoCurso.addItem("Téc. Eventos");
         cbxTelaCadastroAlunoCurso.addItem("Téc. Restaurante e Bar");
-        
-        
+
     }
 
     /**
@@ -458,7 +433,9 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
                                             .addComponent(jLabel30))
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel31)
-                                        .addGap(17, 17, 17))
+                                        .addGap(115, 115, 115)
+                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(3, 3, 3)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,57 +454,58 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
                                         .addComponent(lbQuais)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(tfQuais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(163, 163, 163))
+                        .addGap(214, 214, 214))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(cbxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(36, 36, 36)
-                                        .addComponent(jLabel25)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbxCorRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(tfNomeAluno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(29, 29, 29)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(124, 124, 124)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(pnFotoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel4)
-                            .addComponent(lbTelefone)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(ftTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel5)
+                                                .addComponent(jLabel3)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(ftCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(tfRG, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(cbxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(36, 36, 36)
+                                                .addComponent(jLabel25)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(cbxCorRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(tfNomeAluno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(29, 29, 29)
+                                        .addComponent(pnFotoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel4))
+                                .addGap(96, 96, 96))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbTelefone)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel23)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(ftTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel5)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(ftCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(tfRG, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(pnDataExpedicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(lbCelular)
-                                                    .addComponent(Email))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(ftCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addComponent(jLabel20))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel24)))
-                        .addGap(24, 24, 24)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel23)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(pnDataExpedicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(lbCelular)
+                                                            .addComponent(Email))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(ftCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(jLabel20))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel24)))
+                                .addGap(67, 67, 67)))
                         .addComponent(tfOrgaoEmissor, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(115, 115, 115))))
         );
@@ -548,18 +526,19 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
                             .addComponent(cbxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel25)
                             .addComponent(cbxCorRaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton4)
-                        .addComponent(pnFotoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(8, 8, 8)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel30)
-                        .addComponent(jLabel31)))
+                    .addComponent(pnFotoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(1, 1, 1)
+                            .addComponent(jLabel4))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel31)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton4)
+                        .addGap(1, 1, 1)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tfNaturalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pnDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -679,7 +658,7 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
                                 .addComponent(jLabel17)
                                 .addGap(3, 3, 3)
                                 .addComponent(cbxCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(142, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -987,14 +966,14 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, 0)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1028,18 +1007,18 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
     }//GEN-LAST:event_cbxTelaCadastroAlunoCursoActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       TelaWebcam tela = new TelaWebcam(this, true);
-       tela.setVisible(true);
-       
-       caminhoImagemAtualUsuario = tela.retornarCaminhoImagem();
-       lbFoto.setIcon(new ImageIcon(((new ImageIcon(caminhoImagemAtualUsuario)).getImage()).getScaledInstance(120, 94, java.awt.Image.SCALE_SMOOTH)));
+        TelaWebcam tela = new TelaWebcam(this, true);
+        tela.setVisible(true);
+
+        caminhoImagemAtualUsuario = tela.retornarCaminhoImagem();
+        lbFoto.setIcon(new ImageIcon(((new ImageIcon(caminhoImagemAtualUsuario)).getImage()).getScaledInstance(120, 94, java.awt.Image.SCALE_SMOOTH)));
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarCadastroActionPerformed
         // TODO add your handling code here:
-    Calendar cal = Calendar.getInstance();
-    DecimalFormat format = new DecimalFormat("00");     
-    cal.setTime((java.util.Date) dataExpedicao.getValue());
+        Calendar cal = Calendar.getInstance();
+        DecimalFormat format = new DecimalFormat("00");
+        cal.setTime((java.util.Date) dataExpedicao.getValue());
 
 // aluno
         alunoN.setNome(tfNomeAluno.getText());
@@ -1058,98 +1037,79 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
         alunoN.setObservacao(tfQuais.getText());
         alunoN.setOrgaoEmissor(tfOrgaoEmissor.getText());
         alunoN.setRG(tfRG.getText());
-        alunoN.setSexo(cbxSexo.getSelectedItem()+"");
+        alunoN.setSexo(cbxSexo.getSelectedItem() + "");
         alunoN.setStatus("ativo");
-        alunoN.setUf(cbxEstado.getSelectedItem()+"");
- // endereco 
+        alunoN.setUf(cbxEstado.getSelectedItem() + "");
+        // endereco 
         enderecoN.setBairro(tfBairro.getText());
         enderecoN.setCep(ftCEP.getText());
-        enderecoN.setCidade(cbxCidade.getSelectedItem()+"");
+        enderecoN.setCidade(cbxCidade.getSelectedItem() + "");
         enderecoN.setComplemento(tfNumCasa.getText());
         enderecoN.setRua(tfRua.getText());
-        enderecoN.setUf(cbxEstado.getSelectedItem()+"");
+        enderecoN.setUf(cbxEstado.getSelectedItem() + "");
 // contato     
-        ArrayList <Contato> cont = new ArrayList();
-       int i =-1; 
-       
-    contatoN.setTipo(Email.getText());
-    contatoN.setContato(tfEmail.getText());
-    cont.add(i+1, contatoN);
-    
-  
-    
-    contatoN2.setTipo(lbTelefone.getText());
-    contatoN2.setContato(ftTelefone.getText());
-     cont.add(i+1,contatoN2);
-     
-    contatoN3.setTipo(lbCelular.getText());
-    contatoN3.setContato(ftCelular.getText());
-    cont.add(i+1,contatoN3);
-     
-    alunoN.setContato(cont);
-    alunoN.setEnderecos(enderecoN);
-    
-    System.out.println(cont.size());
-    for (int j= 0; j < cont.size();j++)
-    {
-        System.out.println(cont.size());
-        System.out.println(cont.get(j).getTipo());
-        System.out.println(cont.get(j).getContato());
-       
-    }
-    
-    alunob.cadastro(alunoN, enderecoN, cont);
-        
-        
+        ArrayList<Contato> cont = new ArrayList();
+
+        contatoN.setTipo(Email.getText());
+        contatoN.setContato(tfEmail.getText());
+
+        cont.add(contatoN);
+
+        contatoN2.setTipo(lbTelefone.getText());
+        contatoN2.setContato(ftTelefone.getText());
+
+        cont.add(contatoN2);
+
+        contatoN3.setTipo(lbCelular.getText());
+        contatoN3.setContato(ftCelular.getText());
+
+        cont.add(contatoN3);
+
+        alunob.cadastro(alunoN, enderecoN, cont);
+
+
     }//GEN-LAST:event_btConfirmarCadastroActionPerformed
 
     private void tfRGKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfRGKeyTyped
-     
-        if(tfRG.getText().length() >= 10)
-       {
-           evt.consume();
-       }
-        
+
+        if (tfRG.getText().length() >= 10) {
+            evt.consume();
+        }
+
     }//GEN-LAST:event_tfRGKeyTyped
 
     private void tfEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEmailKeyTyped
-          if(tfEmail.getText().length() >= 50)
-       {
-           evt.consume();
-       }
+        if (tfEmail.getText().length() >= 50) {
+            evt.consume();
+        }
     }//GEN-LAST:event_tfEmailKeyTyped
 
     private void tfOrgaoEmissorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfOrgaoEmissorKeyTyped
-           if(tfOrgaoEmissor.getText().length() >= 6)
-       {
-           evt.consume();
-       }
+        if (tfOrgaoEmissor.getText().length() >= 6) {
+            evt.consume();
+        }
     }//GEN-LAST:event_tfOrgaoEmissorKeyTyped
 
     private void tfNomeMaeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeMaeKeyTyped
-           if(tfNomeMae.getText().length() >= 50)
-       {
-           evt.consume();
-       }
+        if (tfNomeMae.getText().length() >= 50) {
+            evt.consume();
+        }
     }//GEN-LAST:event_tfNomeMaeKeyTyped
 
     private void tfNomePaiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomePaiKeyTyped
-            if(tfNomePai.getText().length() >= 50)
-       {
-           evt.consume();
-       }
+        if (tfNomePai.getText().length() >= 50) {
+            evt.consume();
+        }
     }//GEN-LAST:event_tfNomePaiKeyTyped
 
     private void tfNomeAlunoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeAlunoKeyTyped
-            if(tfNomeAluno.getText().length() >= 50)
-       {
-           evt.consume();
-       }
+        if (tfNomeAluno.getText().length() >= 50) {
+            evt.consume();
+        }
     }//GEN-LAST:event_tfNomeAlunoKeyTyped
 
     private void cbSimMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbSimMouseClicked
-        if(cbSim.isSelected())
-        {
+        if (cbSim.isSelected()) {
             lbQuais.setText("Quais:");
             tfQuais.setEnabled(true);
             tfQuais.setVisible(true);
@@ -1157,8 +1117,7 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
     }//GEN-LAST:event_cbSimMouseClicked
 
     private void cbNaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbNaoMouseClicked
-       if(cbNao.isSelected())
-        {
+        if (cbNao.isSelected()) {
             lbQuais.setText("");
             tfQuais.setEnabled(false);
             tfQuais.setVisible(false);
@@ -1166,17 +1125,15 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
     }//GEN-LAST:event_cbNaoMouseClicked
 
     private void tfNumCasaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNumCasaKeyTyped
-           if(tfNumCasa.getText().length() >= 5)
-       {
-           evt.consume();
-       }
+        if (tfNumCasa.getText().length() >= 5) {
+            evt.consume();
+        }
     }//GEN-LAST:event_tfNumCasaKeyTyped
 
     private void tfRuaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfRuaKeyTyped
-            if(tfRua.getText().length() >= 50)
-       {
-           evt.consume();
-       }
+        if (tfRua.getText().length() >= 50) {
+            evt.consume();
+        }
     }//GEN-LAST:event_tfRuaKeyTyped
 
     /**

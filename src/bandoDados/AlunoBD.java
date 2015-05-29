@@ -11,7 +11,83 @@ import modelos.*;
 public class AlunoBD extends PessoaBD {
     // cadastros 
 
-    // Metodoa Principais 
+    // Metodos Principais : alunos , endereço, contato, deempenho e escolaridade 
+   
+    public void cadastro(Aluno aluno, Endereco endereco, Contato contato, ArrayList <Escolaridade> escolaridade, ArrayList <Desempenho> desempenho) {
+        int key = 0;
+        try {
+            key = super.cadastro(aluno, endereco, contato);
+
+            conectarBanco();
+            stm = con.createStatement();
+                     
+            cadastroEscolaridade(key, escolaridade);
+            cadastroDesempenho(key, desempenho);
+
+            String sql = "insert into aluno (codAluno,matricula,certidaoNascimento,compEscolaridade,status,observacao)"
+                    + "value(" + key + ",'" + aluno.getMatricula() + "','" + aluno.getCertidaoNascimento() + "',"
+                    + "'" + aluno.getComprovanteEscolarida() + "','" + aluno.getStatus() + "','" + aluno.getObservacao() + "');";
+
+            JOptionPane.showMessageDialog(null, "Aluno: " + aluno.getNome() + "\n \t Cadastrado com sucesso");
+
+            stm.executeUpdate(sql);
+
+            System.out.println(key);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            desconectarBanco();
+
+        }
+
+    } 
+   
+   public void cadastro(Aluno aluno, Endereco endereco, Contato contato, Desempenho desempenho, Escolaridade escolaridade) {
+        int key = 0;
+        try {
+            key = super.cadastro(aluno, endereco, contato);
+
+            conectarBanco();
+            stm = con.createStatement();
+                     
+            cadastroDesempenho(key, desempenho);
+            cadastroEscolaridade(key, escolaridade);
+
+            String sql = "insert into aluno (codAluno,matricula,certidaoNascimento,compEscolaridade,status,observacao)"
+                    + "value(" + key + ",'" + aluno.getMatricula() + "','" + aluno.getCertidaoNascimento() + "',"
+                    + "'" + aluno.getComprovanteEscolarida() + "','" + aluno.getStatus() + "','" + aluno.getObservacao() + "');";
+
+            JOptionPane.showMessageDialog(null, "Aluno: " + aluno.getNome() + "\n \t Cadastrado com sucesso");
+
+            stm.executeUpdate(sql);
+
+            System.out.println(key);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            desconectarBanco();
+
+        }
+
+    }
+  
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   // Cadastro de alunos , endereço, contato, deempenho e escolaridade 
    
    public void cadastro(Aluno aluno, Endereco endereco, Contato contato, Desempenho desempenho) {
         int key = 0;
@@ -41,37 +117,7 @@ public class AlunoBD extends PessoaBD {
         }
 
     }
-  
-      public void cadastro(Aluno aluno, Endereco endereco, Contato contato, Desempenho desempenho, Escolaridade escolaridade) {
-        int key = 0;
-        try {
-            key = super.cadastro(aluno, endereco, contato);
-
-            conectarBanco();
-            stm = con.createStatement();
-                     
-            cadastroDesempenho(key, desempenho);
-            cadastroEscolaridade(key, escolaridade);
-
-            String sql = "insert into aluno (codAluno,matricula,certidaoNascimento,compEscolaridade,status,observacao)"
-                    + "value(" + key + ",'" + aluno.getMatricula() + "','" + aluno.getCertidaoNascimento() + "',"
-                    + "'" + aluno.getComprovanteEscolarida() + "','" + aluno.getStatus() + "','" + aluno.getObservacao() + "');";
-
-            JOptionPane.showMessageDialog(null, "Aluno: " + aluno.getNome() + "\n \t Cadastrado com sucesso");
-
-            stm.executeUpdate(sql);
-
-            System.out.println(key);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        } finally {
-            desconectarBanco();
-
-        }
-
-    }
-   
+     
    public void cadastro(Aluno aluno, Endereco endereco, Contato contato, Escolaridade escolaridade) {
         int key = 0;
         try {
@@ -158,41 +204,6 @@ public class AlunoBD extends PessoaBD {
         }
 
     }  
-    
-   public void cadastro(Aluno aluno, Endereco endereco, Contato contato, ArrayList <Escolaridade> escolaridade, ArrayList <Desempenho> desempenho) {
-        int key = 0;
-        try {
-            key = super.cadastro(aluno, endereco, contato);
-
-            conectarBanco();
-            stm = con.createStatement();
-                     
-            cadastroEscolaridade(key, escolaridade);
-            cadastroDesempenho(key, desempenho);
-
-            String sql = "insert into aluno (codAluno,matricula,certidaoNascimento,compEscolaridade,status,observacao)"
-                    + "value(" + key + ",'" + aluno.getMatricula() + "','" + aluno.getCertidaoNascimento() + "',"
-                    + "'" + aluno.getComprovanteEscolarida() + "','" + aluno.getStatus() + "','" + aluno.getObservacao() + "');";
-
-            JOptionPane.showMessageDialog(null, "Aluno: " + aluno.getNome() + "\n \t Cadastrado com sucesso");
-
-            stm.executeUpdate(sql);
-
-            System.out.println(key);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        } finally {
-            desconectarBanco();
-
-        }
-
-    }  
-   
-
-   
-   
-    
     
     public void cadastro(Aluno aluno, Endereco endereco, Contato contato) {
         int key = 0;
