@@ -34,6 +34,9 @@ public class Pessoa
     
     // Comandos para Buscar em outras tabelas 
 
+    
+    // endereço 
+    
     public ArrayList <Endereco> getEnderecos()
     {
         return this.enderecos;
@@ -48,11 +51,13 @@ public class Pessoa
         this.enderecos.add(endereco);
     }
 
+    
+    // contato 
+    
     public ArrayList <Contato> getContato(Pessoa pessoa) {
        
        return this.contatos;
     }
-
     public void setContato(Contato contato) {
         this.contatos.add(contato);
     }
@@ -61,6 +66,8 @@ public class Pessoa
         this.contatos = contato;
     }
    
+    
+    
 /*=====================================================================*/
 
     public int getCodPessoa() {

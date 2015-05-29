@@ -1,11 +1,26 @@
-
 package modelos;
 
-import java.util.ArrayList;
 
-public class BasesTecnologicas
-{
+public class BasesTecnologicas {
+
     private int basesTecnologicas;
-    private ArrayList<String> bases = new ArrayList();
-    
+    private String bases ;
+
+    public int getBasesTecnologicas() {
+        return basesTecnologicas;
+    }
+
+    public void setBasesTecnologicas(int basesTecnologicas) {
+        this.basesTecnologicas = basesTecnologicas;
+    }
+
+    public String getBases() {
+        return bases;
+    }
+
+    public void setBases(String bases) {
+        this.bases = bases;
+    }
+
+   
 }

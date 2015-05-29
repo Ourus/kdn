@@ -1,11 +1,27 @@
-
 package modelos;
 
-import java.util.ArrayList;
 
-public class Habilidades
-{
+
+public class Habilidades {
+
     private int codHabilidades;
-    private ArrayList<String> habilidades = new ArrayList();
-    
+    private String habilidades;
+
+    public int getCodHabilidades() {
+        return codHabilidades;
+    }
+
+    public void setCodHabilidades(int codHabilidades) {
+        this.codHabilidades = codHabilidades;
+    }
+
+    public String getHabilidades() {
+        return habilidades;
+    }
+
+    public void setHabilidades(String habilidades) {
+        this.habilidades = habilidades;
+    }
+   
+
 }
