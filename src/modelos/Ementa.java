@@ -18,10 +18,7 @@ public class Ementa extends Disciplina
     public void setPeriodoLetivo(String periodoLetivo) {
         this.periodoLetivo = periodoLetivo;
     }
-    
-    
-    
-    
+
     // ========================================================================
 
    // bases tecnologicas 
