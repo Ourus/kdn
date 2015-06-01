@@ -111,10 +111,10 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
 
         //add estados
         //add cor/raça
-        cbxCorRaca.addItem("Branco");
-        cbxCorRaca.addItem("Preto");
-        cbxCorRaca.addItem("Pardo");
-        cbxCorRaca.addItem("Amarelo");
+        cbxCorRaca.addItem("Branca");
+        cbxCorRaca.addItem("Preta");
+        cbxCorRaca.addItem("Parda");
+        cbxCorRaca.addItem("Amarela");
         cbxCorRaca.addItem("Indígena");
 
         // add itens de OPÇÃO DE CURSOS a tela de cadastro de alunos
@@ -1040,12 +1040,14 @@ public class TelaCadastroAluno extends javax.swing.JDialog {
             statusFoto = "false";
         }
         
+        System.out.println("hitorico: "+statushistorico + "certidao: "+statuscertidao +"Declaração escolar: "+statusDeclaracao
+         + "comprovante de residencia: "+statusResidencia+ "Foto: "+ statusFoto);
         
 // aluno
         alunoN.setNome(tfNomeAluno.getText());
         alunoN.setCertidaoNascimento(statuscertidao);
-        alunoN.setComprovanteEscolarida(statushistorico);
-        alunoN.setCompDeclaracao(statusDeclaracao);
+        alunoN.setHistoricoEscolar(statushistorico);
+        alunoN.setComprovanteEscolarida(statusDeclaracao);
         alunoN.setCompResidencia(statusResidencia);
         alunoN.setCompFoto(statusFoto);
         alunoN.setCorRaca(cbxCorRaca.getSelectedItem()+"");

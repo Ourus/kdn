@@ -10,8 +10,8 @@ public class Aluno extends Pessoa
     private String certidaoNascimento;
     private String comprovanteEscolarida;
     private String observacao;
+    private String historicoEscolar;
     private String status;
-    private String compDeclaracao;
     private ArrayList <Desempenho> desempenho = new ArrayList();
     private ArrayList<Escolaridade> escolaridade = new ArrayList ();    
 
@@ -91,14 +91,18 @@ public class Aluno extends Pessoa
     /**
      * @return the compDeclaracao
      */
-    public String getCompDeclaracao() {
-        return compDeclaracao;
+
+    /**
+     * @return the historicoEscolar
+     */
+    public String getHistoricoEscolar() {
+        return historicoEscolar;
     }
 
     /**
-     * @param compDeclaracao the compDeclaracao to set
+     * @param historicoEscolar the historicoEscolar to set
      */
-    public void setCompDeclaracao(String compDeclaracao) {
-        this.compDeclaracao = compDeclaracao;
+    public void setHistoricoEscolar(String historicoEscolar) {
+        this.historicoEscolar = historicoEscolar;
     }
 }
