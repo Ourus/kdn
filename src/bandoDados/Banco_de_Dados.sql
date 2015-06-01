@@ -29,6 +29,8 @@ create table if not exists pessoa
     nomeMae varchar (80),
     nomePai varchar (80),
     corRaca enum ('Branca','Preta','Parda','Amarela','Indigena'),
+    compResidencia enum ('true','false'),
+    compFoto enum ('true','false'),
     primary key (codPessoa)
 );
 
@@ -97,6 +99,7 @@ create table if not exists aluno
     comprovanteResidencia enum('true','false'),
     status varchar (45) not null,
     observacao varchar (500),
+    compDeclaracao enum ('true','false'),
     primary key (codAluno),
     foreign key (codAluno) references pessoa (codPessoa) on delete cascade  
    
@@ -267,7 +270,7 @@ create table if not exists dia (
 
 create table if not exists diaHora (
     codDiaHora int unsigned not null auto_increment,
-    codDia int unsigned ,
+    codDia int unsigned,
     codHora int unsigned,
     primary key (codDiaHora),
     foreign key (codDia) references dia (codDia) on delete cascade,

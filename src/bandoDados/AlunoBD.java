@@ -24,9 +24,9 @@ public class AlunoBD extends PessoaBD {
             cadastroEscolaridade(key, escolaridade);
             cadastroDesempenho(key, desempenho);
 
-            String sql = "insert into aluno (codAluno,matricula,certidaoNascimento,compEscolaridade,status,observacao)"
+            String sql = "insert into aluno (codAluno,matricula,certidaoNascimento,compEscolaridade,status,observacao,compDeclaracao)"
                     + "value(" + key + ",'" + aluno.getMatricula() + "','" + aluno.getCertidaoNascimento() + "',"
-                    + "'" + aluno.getComprovanteEscolarida() + "','" + aluno.getStatus() + "','" + aluno.getObservacao() + "');";
+                    + "'" + aluno.getComprovanteEscolarida() + "','" + aluno.getStatus() + "','" + aluno.getObservacao() +"','" + aluno.getCompDeclaracao() + "');";
 
             JOptionPane.showMessageDialog(null, "Aluno: " + aluno.getNome() + "\n \t Cadastrado com sucesso");
 
