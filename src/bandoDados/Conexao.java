@@ -9,9 +9,9 @@ import javax.swing.JOptionPane;
 public class Conexao
 {
     protected String driver="com.mysql.jdbc.Driver";
-    protected String usuario = "admin";
+    protected String usuario = "root";
     protected String caminho = "jdbc:mysql://localhost:3306/ceet";
-    protected String senha = "admin";
+    protected String senha = "root";
     protected Connection con;
     protected Statement stm;
     

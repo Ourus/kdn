@@ -11,6 +11,7 @@ public class Aluno extends Pessoa
     private String comprovanteEscolarida;
     private String observacao;
     private String status;
+    private String compDeclaracao;
     private ArrayList <Desempenho> desempenho = new ArrayList();
     private ArrayList<Escolaridade> escolaridade = new ArrayList ();    
 
@@ -85,5 +86,19 @@ public class Aluno extends Pessoa
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    /**
+     * @return the compDeclaracao
+     */
+    public String getCompDeclaracao() {
+        return compDeclaracao;
+    }
+
+    /**
+     * @param compDeclaracao the compDeclaracao to set
+     */
+    public void setCompDeclaracao(String compDeclaracao) {
+        this.compDeclaracao = compDeclaracao;
     }
 }

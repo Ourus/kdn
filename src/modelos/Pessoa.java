@@ -3,7 +3,7 @@ package modelos;
 
 import java.util.ArrayList;
 import bandoDados.PessoaBD;
-import com.mysql.jdbc.Blob;
+import java.sql.Blob;
 import java.sql.Date;
 import java.util.Calendar;
 
@@ -24,6 +24,8 @@ public class Pessoa
     private String RG;
     private String orgaoEmissor;
     private Calendar dataExpedicao;
+    private String compResidencia;
+    private String compFoto;
     private ArrayList <Endereco> enderecos = new ArrayList ();
     private ArrayList <Contato> contatos = new ArrayList();
 
@@ -181,6 +183,34 @@ public class Pessoa
 
     public void setDataExpedicao(Calendar dataExpedicao) {
         this.dataExpedicao = dataExpedicao;
+    }
+
+    /**
+     * @return the compResidencia
+     */
+    public String getCompResidencia() {
+        return compResidencia;
+    }
+
+    /**
+     * @param compResidencia the compResidencia to set
+     */
+    public void setCompResidencia(String compResidencia) {
+        this.compResidencia = compResidencia;
+    }
+
+    /**
+     * @return the compFoto
+     */
+    public String getCompFoto() {
+        return compFoto;
+    }
+
+    /**
+     * @param compFoto the compFoto to set
+     */
+    public void setCompFoto(String compFoto) {
+        this.compFoto = compFoto;
     }
   
     

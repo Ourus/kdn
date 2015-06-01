@@ -19,20 +19,234 @@ import modelos.Pessoa;
 import modelos.Curso;
 
 public class DisiplinaBD extends Conexao {
-    
-    
-    // ==============================| Cadastros Principais de Disciplina |===================
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
+    // ==============================================================| Cadastros Principais de Disciplina |==============================================================================
+   
+    
+    
+    
+    
+    
+    public void cadastroDisciplinaKey(Curso curso, Disciplina disciplina, BasesTecnologicas base, Ementa ementa, Competencias compentencias, Habilidades habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(Curso curso, ArrayList<Disciplina> disciplina, BasesTecnologicas base, Ementa ementa, Competencias compentencias, Habilidades habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(Curso curso, Disciplina disciplina, ArrayList<BasesTecnologicas> base, Ementa ementa, Competencias compentencias, Habilidades habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(Curso curso, Disciplina disciplina, BasesTecnologicas base, Ementa ementa, ArrayList<Competencias> compentencias, Habilidades habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(Curso curso, Disciplina disciplina, BasesTecnologicas base, Ementa ementa, Competencias compentencias, ArrayList<Habilidades> habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    
+    
+    
+    public void cadastroDisciplinaKey(Curso curso, ArrayList<Disciplina> disciplina, ArrayList<BasesTecnologicas> base, ArrayList<Ementa> ementa, ArrayList<Competencias> compentencias, ArrayList<Habilidades> habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(int curso, Disciplina disciplina, BasesTecnologicas base, Ementa ementa, Competencias compentencias, Habilidades habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(int curso, ArrayList<Disciplina> disciplina, BasesTecnologicas base, Ementa ementa, Competencias compentencias, Habilidades habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(int curso, Disciplina disciplina, ArrayList<BasesTecnologicas> base, Ementa ementa, Competencias compentencias, Habilidades habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(int curso, Disciplina disciplina, BasesTecnologicas base, Ementa ementa, ArrayList<Competencias> compentencias, Habilidades habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(int curso, Disciplina disciplina, BasesTecnologicas base, Ementa ementa, Competencias compentencias, ArrayList<Habilidades> habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    public void cadastroDisciplinaKey(int curso, ArrayList<Disciplina> disciplina, ArrayList<BasesTecnologicas> base, ArrayList<Ementa> ementa, ArrayList<Competencias> compentencias, ArrayList<Habilidades> habilidad) {
+        int i = -1;
+
+        try {
+            i = cadastroDisciplinaKey(curso, disciplina);
+            casdastroEmentaDisciplina(i, ementa);
+            casdastroCompetenciasDisciplina(i, compentencias);
+            casdastroHabilidadesDisciplina(i, habilidad);
+            casdastroBasesTecnologicasDisciplina(i, base);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+
+        } finally {
+            desconectarBanco();
+
+        }
+    }
+
+    //======================================
     private int cadastroDisciplinaKey(Curso curso, Disciplina disciplina) {
         int key = 0;
 
@@ -154,7 +368,6 @@ public class DisiplinaBD extends Conexao {
         }
     }
 
-    
 // Cadastro Ementa 
     public void casdastroEmentaDisciplina(Disciplina disciplina, Ementa ementa) {
         try {
@@ -183,288 +396,219 @@ public class DisiplinaBD extends Conexao {
             desconectarBanco();
         }
     }
-    
-    
-    // Cadastro Competencias
-    
-    public void casdastroCompetenciasDisciplina(Ementa ementa, Competencias compentencias)
-    {
-        try 
-        {
+
+    public void casdastroEmentaDisciplina(int disciplina, ArrayList<Ementa> eme) {
+        try {
             conectarBanco();
-          
-            stm = con.createStatement();
-            String sql= "insert into ceet.competencia(codEmenta,Compentencia ) values ("+ementa.getCodDisciplina()+""
-                    + ",'"+compentencias.getCompetencia()+"');";
-            stm.executeUpdate(sql);
-           
-            
-        } 
-        catch (Exception e)
-        {
+            for (Ementa ementa : eme) {
+                stm = con.createStatement();
+                String sql = "insert into ementa (codEmenta,periodoLetivo) values (" + disciplina + ","
+                        + "'" + ementa.getPeriodoLetivo() + "');";
+                stm.executeUpdate(sql);
+            }
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
-            desconectarBanco();
-        }
-    }
-    
-    public void casdastroCompetenciasDisciplina(Ementa ementa, ArrayList<Competencias> comp)
-    {
-        try 
-        {
-            conectarBanco();
-            for(Competencias compentencias:comp)
-            {
-            stm = con.createStatement();
-           String sql= "insert into ceet.competencia(codEmenta,Compentencia ) values ("+ementa.getCodDisciplina()+""
-                    + ",'"+compentencias.getCompetencia()+"');";
-            stm.executeUpdate(sql);
-            
-        } 
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
-            desconectarBanco();
-        }
-    }
-    public void casdastroCompetenciasDisciplina(int ementa, Competencias compentencias)
-    {
-        try 
-        {
-            conectarBanco();
-            stm = con.createStatement();
-          String sql= "insert into ceet.competencia(codEmenta,Compentencia ) values ("+ementa+""
-                    + ",'"+compentencias.getCompetencia()+"');";
-            stm.executeUpdate(sql);
-            
-        } 
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
-            desconectarBanco();
-        }
-    }
-    
-    public void casdastroCompetenciasDisciplina(int ementa, ArrayList<Competencias> comp)
-    {
-        try 
-        {
-            conectarBanco();
-            for(Competencias compentencias:comp)
-            {
-            stm = con.createStatement();
-           String sql= "insert into ceet.competencia(codEmenta,Compentencia ) values ("+ementa+""
-                    + ",'"+compentencias.getCompetencia()+"');";
-            stm.executeUpdate(sql);
-            
-        } 
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
+        } finally {
             desconectarBanco();
         }
     }
 
-    
-   // Cadastro Habilidades 
-    
-    public void casdastroHabilidadesDisciplina(Ementa ementa, Habilidades  habilidade)
-    {
-        try 
-        {
+    // Cadastro Competencias
+    public void casdastroCompetenciasDisciplina(Ementa ementa, Competencias compentencias) {
+        try {
             conectarBanco();
-          
+
             stm = con.createStatement();
-            String sql= "insert into ceet.habilidade(codEmenta,habilidade) values ("+ementa.getCodDisciplina()+""
-                    + ",'"+habilidade.getHabilidades()+"');";
+            String sql = "insert into ceet.competencia(codEmenta,Compentencia ) values (" + ementa.getCodDisciplina() + ""
+                    + ",'" + compentencias.getCompetencia() + "');";
             stm.executeUpdate(sql);
-           
-            
-        } 
-        catch (Exception e)
-        {
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
+        } finally {
             desconectarBanco();
         }
     }
-    
-    public void casdastroHabilidadesDisciplina(Ementa ementa, ArrayList <Habilidades > comp)
-    {
-        try 
-        {
+
+    public void casdastroCompetenciasDisciplina(Ementa ementa, ArrayList<Competencias> comp) {
+        try {
             conectarBanco();
-            for(Habilidades habilidade:comp)
-            {
-            stm = con.createStatement();
-           String sql= "insert into ceet.habilidade(codEmenta,habilidade) values ("+ementa.getCodDisciplina()+""
-                    + ",'"+habilidade.getHabilidades()+"');";
-            stm.executeUpdate(sql);
-            
-        } 
-        }
-        catch (Exception e)
-        {
+            for (Competencias compentencias : comp) {
+                stm = con.createStatement();
+                String sql = "insert into ceet.competencia(codEmenta,Compentencia ) values (" + ementa.getCodDisciplina() + ""
+                        + ",'" + compentencias.getCompetencia() + "');";
+                stm.executeUpdate(sql);
+
+            }
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
+        } finally {
             desconectarBanco();
         }
     }
-    public void casdastroHabilidadesDisciplina(int ementa, Habilidades  habilidade)
-    {
-        try 
-        {
+
+    public void casdastroCompetenciasDisciplina(int ementa, Competencias compentencias) {
+        try {
             conectarBanco();
             stm = con.createStatement();
-          String sql= "insert into ceet.habilidade(codEmenta,habilidade) values ("+ementa+""
-                    + ",'"+habilidade.getHabilidades()+"');";
+            String sql = "insert into ceet.competencia(codEmenta,Compentencia ) values (" + ementa + ""
+                    + ",'" + compentencias.getCompetencia() + "');";
             stm.executeUpdate(sql);
-            
-        } 
-        catch (Exception e)
-        {
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
+        } finally {
             desconectarBanco();
         }
     }
-    
-    public void casdastroHabilidadesDisciplina(int ementa, ArrayList<Habilidades > comp)
-    {
-        try 
-        {
+
+    public void casdastroCompetenciasDisciplina(int ementa, ArrayList<Competencias> comp) {
+        try {
             conectarBanco();
-            for(Habilidades habilidade:comp)
-            {
-            stm = con.createStatement();
-           String sql= "insert into ceet.habilidade(codEmenta,habilidade ) values ("+ementa+""
-                    + ",'"+habilidade.getHabilidades()+"');";
-            stm.executeUpdate(sql);
-            
-        } 
-        }
-        catch (Exception e)
-        {
+            for (Competencias compentencias : comp) {
+                stm = con.createStatement();
+                String sql = "insert into ceet.competencia(codEmenta,Compentencia ) values (" + ementa + ""
+                        + ",'" + compentencias.getCompetencia() + "');";
+                stm.executeUpdate(sql);
+
+            }
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
+        } finally {
             desconectarBanco();
         }
     }
-    
+
+    // Cadastro Habilidades 
+    public void casdastroHabilidadesDisciplina(Ementa ementa, Habilidades habilidade) {
+        try {
+            conectarBanco();
+
+            stm = con.createStatement();
+            String sql = "insert into ceet.habilidade(codEmenta,habilidade) values (" + ementa.getCodDisciplina() + ""
+                    + ",'" + habilidade.getHabilidades() + "');";
+            stm.executeUpdate(sql);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            desconectarBanco();
+        }
+    }
+
+    public void casdastroHabilidadesDisciplina(Ementa ementa, ArrayList<Habilidades> comp) {
+        try {
+            conectarBanco();
+            for (Habilidades habilidade : comp) {
+                stm = con.createStatement();
+                String sql = "insert into ceet.habilidade(codEmenta,habilidade) values (" + ementa.getCodDisciplina() + ""
+                        + ",'" + habilidade.getHabilidades() + "');";
+                stm.executeUpdate(sql);
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            desconectarBanco();
+        }
+    }
+
+    public void casdastroHabilidadesDisciplina(int ementa, Habilidades habilidade) {
+        try {
+            conectarBanco();
+            stm = con.createStatement();
+            String sql = "insert into ceet.habilidade(codEmenta,habilidade) values (" + ementa + ""
+                    + ",'" + habilidade.getHabilidades() + "');";
+            stm.executeUpdate(sql);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            desconectarBanco();
+        }
+    }
+
+    public void casdastroHabilidadesDisciplina(int ementa, ArrayList<Habilidades> comp) {
+        try {
+            conectarBanco();
+            for (Habilidades habilidade : comp) {
+                stm = con.createStatement();
+                String sql = "insert into ceet.habilidade(codEmenta,habilidade ) values (" + ementa + ""
+                        + ",'" + habilidade.getHabilidades() + "');";
+                stm.executeUpdate(sql);
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            desconectarBanco();
+        }
+    }
+
     // Bases tecnologicas
-    
-    
-     public void casdastroBasesTecnologicasDisciplina(Ementa ementa, BasesTecnologicas  base)
-    {
-        try 
-        {
+    public void casdastroBasesTecnologicasDisciplina(Ementa ementa, BasesTecnologicas base) {
+        try {
             conectarBanco();
-          
+
             stm = con.createStatement();
-            String sql= "insert into ceet.basesTecnologicas(codEmenta,bases) values ("+ementa.getCodDisciplina()+""
-                    + ",'"+base.getBases()+"');";
+            String sql = "insert into ceet.basesTecnologicas(codEmenta,bases) values (" + ementa.getCodDisciplina() + ""
+                    + ",'" + base.getBases() + "');";
             stm.executeUpdate(sql);
-           
-            
-        } 
-        catch (Exception e)
-        {
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
+        } finally {
             desconectarBanco();
         }
     }
-    
-    public void casdastroBasesTecnologicasDisciplina(Ementa ementa, ArrayList <BasesTecnologicas > comp)
-    {
-        try 
-        {
+
+    public void casdastroBasesTecnologicasDisciplina(Ementa ementa, ArrayList<BasesTecnologicas> comp) {
+        try {
             conectarBanco();
-            for(BasesTecnologicas base:comp)
-            {
-            stm = con.createStatement();
-           String sql= "insert into ceet.basesTecnologicas(codEmenta,bases ) values ("+ementa.getCodDisciplina()+""
-                    + ",'"+base.getBases()+"');";
-            stm.executeUpdate(sql);
-            
-        } 
-        }
-        catch (Exception e)
-        {
+            for (BasesTecnologicas base : comp) {
+                stm = con.createStatement();
+                String sql = "insert into ceet.basesTecnologicas(codEmenta,bases ) values (" + ementa.getCodDisciplina() + ""
+                        + ",'" + base.getBases() + "');";
+                stm.executeUpdate(sql);
+
+            }
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
+        } finally {
             desconectarBanco();
         }
     }
-    public void casdastroBasesTecnologicasDisciplina(int ementa, BasesTecnologicas  base)
-    {
-        try 
-        {
+
+    public void casdastroBasesTecnologicasDisciplina(int ementa, BasesTecnologicas base) {
+        try {
             conectarBanco();
             stm = con.createStatement();
-          String sql= "insert into ceet.basesTecnologicas(codEmenta,bases) values ("+ementa+""
-                    + ",'"+base.getBases()+"');";
+            String sql = "insert into ceet.basesTecnologicas(codEmenta,bases) values (" + ementa + ""
+                    + ",'" + base.getBases() + "');";
             stm.executeUpdate(sql);
-            
-        } 
-        catch (Exception e)
-        {
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
+        } finally {
             desconectarBanco();
         }
     }
-    
-    public void casdastroBasesTecnologicasDisciplina(int ementa, ArrayList<BasesTecnologicas > comp)
-    {
-        try 
-        {
+
+    public void casdastroBasesTecnologicasDisciplina(int ementa, ArrayList<BasesTecnologicas> comp) {
+        try {
             conectarBanco();
-            for(BasesTecnologicas base:comp)
-            {
-            stm = con.createStatement();
-           String sql= "insert into ceet.basesTecnologicas(codEmenta,bases) values ("+ementa+""
-                    + ",'"+base.getBases()+"');";
-            stm.executeUpdate(sql);
-            
-        } 
-        }
-        catch (Exception e)
-        {
+            for (BasesTecnologicas base : comp) {
+                stm = con.createStatement();
+                String sql = "insert into ceet.basesTecnologicas(codEmenta,bases) values (" + ementa + ""
+                        + ",'" + base.getBases() + "');";
+                stm.executeUpdate(sql);
+
+            }
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        finally
-        {
+        } finally {
             desconectarBanco();
         }
     }
-    
 
 }
