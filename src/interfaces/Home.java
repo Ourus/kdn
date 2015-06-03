@@ -23,9 +23,10 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        
          
       
-          ConexaoBanco teste = new ConexaoBanco();
+       ConexaoBanco teste = new ConexaoBanco();
        
        for (Login temp: teste.contasCadastradas())
        {

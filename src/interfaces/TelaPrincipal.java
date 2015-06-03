@@ -22,12 +22,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     int numero;
     // CONSTRUTOR
     public TelaPrincipal() 
-    {
+    {   
         initComponents();
         this.setLocationRelativeTo(null);  // Definindo esta janela (TelaPrincipal) como centralizada
         
         this.getContentPane().setBackground(new Color(59,135,199)); // Definindo a cor de fundo desta janela como uma nova cor.
-        
+
                
         
     }
@@ -424,6 +424,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaPrincipal().setVisible(true);
+                
+           
             }
         });
     }

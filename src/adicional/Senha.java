@@ -13,6 +13,7 @@ public class Senha
     {
         String sn="";
         MessageDigest md = null;
+        
         try
         {
             md = MessageDigest.getInstance("MD5");
